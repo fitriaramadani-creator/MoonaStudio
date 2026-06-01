@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="booking-wrapper">
+        <div class="booking-sidebar">
+            <div class="studio-logo"><img src="logo moona.jpeg" width="50" alt="logo"></div>
+            <h1>Moona Studio - Bogor</h1>
+            <div class="schedule-card">
+                <p>
+                  <strong id="display-date">
+                    Belum memilih tanggal
+                  </strong>
+                </p>
+                <p id="display-time">
+                    Belum memilih jam
+                </p> 
+                <p><small>🌐 Asia / Jakarta</small></p>
+                <hr style="border:0; border-top:1px solid #3a475c; margin:15px 0;">
+                <p>🕒 30 menit</p>
+            </div>
+        </div>
+
+        <div class="booking-main">
+            <div id="form-container">
+                <h2>Konfirmasi Pemesanan</h2>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label>Nama Pemesan (Diperlukan)</label>
+                        <input type="text" name="nama" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nomor Whatsapp (Diperlukan)</label>
+                        <input type="tel"
+                        name="whatsapp"
+                        pattern="[0-9]{10,13}"
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email (Diperlukan)</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pilih Hari</label>
+                            <input
+                                type="date" 
+                                id="datePicker"
+                                name="date"
+                                onchange="updateSidebarDate()"
+                                required
+                            >
+                    </div>
+                    <div class="form-group">
+                        <label>Pilih Jam</label>
+                        <select id="timePicker"
+                            onchange="updateSidebarTime()"
+                            name="time"
+                            required>
+                            <option value="">Pilih Jam</option>
+                            <option value="10.00 - 10.30">10.00 - 10.30</option>
+                            <option value="10.30 - 11.00">10.30 - 11.00</option>
+                            <option value="11.00 - 11.30">11.00 - 11.30</option>
+                            <option value="11.30 - 12.00">11.30 - 12.00</option>
+                            <option value="12.00 - 12.30">12.00 - 12.30</option>
+                            <option value="12.30 - 13.00">12.30 - 13.00</option>
+                            <option value="13.00 - 13.30">13.00 - 13.30</option>
+                            <option value="13.30 - 14.00">13.30 - 14.00</option>
+                            <option value="14.00 - 14.30">14.00 - 14.30</option>
+                            <option value="14.30 - 15.00">14.30 - 15.00</option>
+                            <option value="15.00 - 15.30">15.00 - 15.30</option>
+                            <option value="15.30 - 16.00">15.30 - 16.00</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Pilihan Paket</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="paket" value="graduation digital" required>
+                                Graduation - Digital Only  
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="paket" value="graduation print">
+                                Graduation - Include 2 Print
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="paket" value="couple digital">
+                                Couple Session - Digital Only
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="paket" value="couple print">
+                                Couple Session - Include 2 Print
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="paket" value="family digital">
+                                Family Portrait - Digital Only
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="paket" value="family print">
+                                Family Portrait - Include 2 Print
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="paket" value="self digital">
+                                Self Photo - Digital Only
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="paket" value="self print">
+                                Self Photo - Include 2 Print
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Tambahan Orang</label>
+                        <select id="extraPerson" name="extraPerson" required>
+                            <option value="">Please Choose</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tambahan Cetak Foto</label>
+                        <select id="extraPrint" name="extraPrint" required>
+                            <option value="">Please Choose</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                    <div class="confirm-container">
+                        <button type="submit" class="confirm-btn">
+                        Konfirmasi Pemesanan
+                        </button>
+                    </div>
+                </form>
+            </div>    
+            <div class="success-card" id="successMessage">
+                <div class="success-icon">✓</div>
+                    <h2>Booking Berhasil!</h2>
+                    <p>
+                        Terima kasih telah melakukan reservasi di
+                        <strong>Moona Studio</strong>.
+                    </p>
+                    <p class="success-detail">
+                        Detail pemesanan Anda telah kami terima.
+                        Tim kami akan segera menghubungi Anda melalui WhatsApp
+                        untuk konfirmasi jadwal dan pembayaran.
+                    </p>
+                    <button onclick="window.location.href='index.html'" class="back-home-btn">
+                        Kembali ke Beranda
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi update jam di sidebar
+        function updateSidebarTime() {
+            const timePicker = document.getElementById('timePicker');
+            const displayTime = document.getElementById('display-time');
+            displayTime.innerText = timePicker.value;
+        }
+
+        function updateSidebarDate(){
+            const datePicker = document.getElementById('datePicker');
+            const displayDate = document.getElementById('display-date');
+
+            const selectedDate = new Date(datePicker.value);
+            
+            const options = {
+                weekday:'long',
+                year:'numeric',
+                month:'long',
+                day:'numeric'
+        };
+        
+        displayDate.innerText =
+        selectedDate.toLocaleDateString('id-ID', options);
+        }
+
+        // Fungsi kirim form
+        const bookingForm = document.getElementById('bookingForm');
+        const formContainer = document.getElementById('form-container');
+        const successMessage = document.getElementById('successMessage');
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formContainer.style.display = 'none'; // Sembunyikan form
+            successMessage.style.display = 'block'; // Tampilkan pesan
+        });
+
+        document.getElementById("datePicker").min =
+        new Date().toISOString().split("T")[0];
+    </script>
+
+</body>
+</html>

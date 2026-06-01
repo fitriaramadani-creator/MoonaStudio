@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moona Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div class="logo">
+            <img src="logo moona.png" width="50" alt="logo">
+            <span>Moona Studio</span>
+        </div>
+        <ul id="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#price">Price</a></li>
+            <li><a href="#booking">Booking</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Capture Your Beautiful Moments</h1>
+                <p>Create timeless memories with elegant photography and aesthetic studio experience.</p>
+                <div class="hero-buttons">
+                    <a href="#price" class="btn">Cek Harga Paket</a>
+                    <a href="https://wa.me/6288212321919"
+                     class="btn btn-outline"
+                       target="_blank">
+                       Hubungi WhatsApp
+                    </a>
+                 </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="title">
+                <h2>About Moona Studio</h2>
+                <p>Elegant • Minimalist • Aesthetic</p>
+            </div>
+            <div class="about">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1974&auto=format&fit=crop" alt="Moona Studio">
+                <div class="about-text">
+                    <h3>Capturing Every Precious Memory</h3>
+                    <p>
+                    Moona Studio hadir dengan konsep studio foto modern yang nyaman, aesthetic, dan profesional.
+                    Kami membantu mengabadikan momen terbaikmu dengan hasil foto yang clean, elegan, dan berkualitas tinggi.
+                     </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="title">
+                <h2>Our Services</h2>
+                <p>Choose your favorite photo session</p>
+            </div>
+            <div class="service-box">
+                <div class="card">
+                    <h3>Graduation</h3>
+                    <p>Elegant graduation photography with aesthetic concept.</p>
+                </div>
+                <div class="card">
+                    <h3>Couple Session</h3>
+                    <p>Capture beautiful moments together with your partner.</p>
+                </div>
+                <div class="card">
+                    <h3>Family Portrait</h3>
+                    <p>Warm and memorable family photo session.</p>
+                </div>
+                <div class="card">
+                    <h3>Self Photo</h3>
+                    <p>Minimalist self-photo studio with remote camera.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="title">
+                <h2>Gallery</h2>
+                <p>Some moments captured by Moona Studio</p>
+            </div>
+            <div class="gallery-grid">
+                <img src="foto self.png" alt="Self Photo Session">
+                <img src="foto couple.png" alt="Couple Session">
+                <img src="foto family.png" alt="Family Session">
+                <img src="foto graduation.jpeg" alt="Graduation Session">
+            </div>
+        </section>
+        <section id="price" class="price-section">
+            <div class="title">
+                <h2>Price Calculator</h2>
+                <p>Choose your session and calculate your total price.</p>
+            </div>
+            <div class="calculator-wrapper">
+                <div class="calculator-left">
+                    <div class="calc-box">
+                        <h3>Pilih Session</h3>
+                        <div class="session-grid">
+                            <button class="session-btn"
+                                data-price="40000"
+                                data-session="Self Photo"
+                                data-people="1">
+                                Self Photo
+                            </button>
+                            <button class="session-btn"
+                                data-price="70000"
+                                data-session="Couple Photo"
+                                data-people="2">
+                                Couple Photo
+                            </button>
+                            <button class="session-btn"
+                                data-price="95000"
+                                data-session="Graduation"
+                                data-people="3">
+                                Graduation
+                            </button>
+                            <button class="session-btn"
+                                data-price="125000"
+                                data-session="Family Photo"
+                                data-people="5">
+                                Family Photo
+                            </button>
+                        </div>
+                    </div>
+                    <div class="calc-box">
+                        <h3>Output</h3>
+                        <div class="session-grid">
+                            <button class="output-btn"
+                                data-output="0">
+                                Digital Only
+                            </button>
+                            <button class="output-btn"
+                                data-output="20000">
+                                Digital + Print
+                            </button>
+                        </div>
+                    </div>
+                    <div class="calc-box">
+                        <h3>Add Ons</h3>
+                        <div class="addon-row">
+                            <div>
+                                <p>Tambah Orang</p>
+                                <small class="addon-price">
+                                    + Rp 15.000 / orang
+                                </small>
+                            </div>
+                            <div class="counter">
+                                <button type="button" class="minus-person">-</button>
+                                <span id="extraPeople">0</span>
+                                <button type="button" class="plus-person">+</button>
+                            </div>
+                        </div>
+                        <div class="addon-row">
+                            <div>
+                                <p>Tambah Print</p>
+                                <small class="addon-price">
+                                    + Rp 15.000 / print
+                                </small>
+                            </div>
+                            <div class="counter">
+                                <button type="button" class="minus-print">-</button>
+                                <span id="extraPrint">0</span>
+                                <button type="button" class="plus-print">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <h3>Session Summary</h3>
+                        <div class="summary-item">
+                            <span>Session</span>
+                            <strong id="summarySession">Belum memilih session</strong>
+                        </div>
+                        <div class="summary-item">
+                            <span>Total People</span>
+                            <strong id="summaryPeople">0 Orang</strong>          
+                        </div>
+                        <div class="summary-item">
+                            <span>Total Print</span>
+                            <strong id="summaryPrint">0 Print</strong>
+                        </div>
+                        <div class="summary-item">
+                            <span>Duration</span>
+                            <strong>30 Minutes</strong>
+                        </div>
+                        <div class="summary-total">
+                            <p>Total Price</p>
+                            <h1 id="summaryPrice">Rp 0</h1>
+                        </div>
+                        <button class="book-btn"
+                        onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
+                        Book Session
+                        </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking" id="booking">
+            <div class="title">
+                <h2>Book Your Session</h2>
+                <p>Reserve your special moment now</p>
+            </div>
+            <div class="figma-container">
+                <div class="figma-card">
+                    <h3>Bogor</h3>
+                    <span class="sub-location">(Taheul)</span>
+                    <p class="open-time">🕒 Open Daily • 10 AM - 4 PM</p>
+                    <div class="figma-icon-row">
+                        <a href="https://wa.me/6288212321919" target="_blank" class="icon-square">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="https://maps.google.com/?q=Taman Heulang Kota Bogor" target="_blank" class="icon-square">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </a>
+                    </div>
+                    <button class="figma-main-btn" onclick="window.location.href='booking.html'">Book Session</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="title">
+                <h2>Testimonials</h2>
+                <p>What our clients say</p>
+            </div>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>Studio nya nyaman banget dan hasil fotonya aesthetic!</p>
+                    <h4>- Choirul</h4>
+                </div>
+                <div class="testimonial-card">
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>Edit foto clean dan elegan, suka banget hasilnya.</p>
+                    <h4>- Aulia</h4>
+                </div>
+                <div class="testimonial-card">
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>Tempatnya bagus buat foto graduation.</p>
+                    <h4>- Nabila</h4>
+                </div>
+            </div>
+        </section>
+    </main> 
+
+    <footer>
+        <h3>Moona Studio</h3>
+        <p>Capturing Moments, Creating Memories.</p>
+        <p>Instagram : @moonastudio</p>
+        <p>WhatsApp : 0812-3455-7891</p>
+    </footer>
+
+<script>
+let basePrice = 0;
+let basePeople = 0;
+
+let outputPrice = 0;
+
+let extraPeople = 0;
+let extraPrint = 0;
+
+const sessionBtns =
+document.querySelectorAll(".session-btn");
+
+const outputBtns =
+document.querySelectorAll(".output-btn");
+
+const summarySession =
+document.getElementById("summarySession");
+
+const summaryPeople =
+document.getElementById("summaryPeople");
+
+const summaryPrint =
+document.getElementById("summaryPrint");
+
+const summaryPrice =
+document.getElementById("summaryPrice");
+
+const extraPeopleText =
+document.getElementById("extraPeople");
+
+const extraPrintText =
+document.getElementById("extraPrint");
+
+/* SESSION */
+
+sessionBtns.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        sessionBtns.forEach(b =>
+            b.classList.remove("active")
+        );
+
+        btn.classList.add("active");
+
+        basePrice =
+        Number(btn.dataset.price);
+
+        basePeople =
+        Number(btn.dataset.people);
+
+        summarySession.innerText =
+        btn.dataset.session;
+
+        updateTotal();
+
+    });
+
+});
+
+/* OUTPUT */
+
+outputBtns.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        outputBtns.forEach(b =>
+            b.classList.remove("active")
+        );
+
+        btn.classList.add("active");
+
+        outputPrice =
+        Number(btn.dataset.output);
+
+        updateTotal();
+
+    });
+
+});
+
+/* EXTRA PEOPLE */
+
+document.querySelector(".plus-person")
+.addEventListener("click", () => {
+
+    extraPeople++;
+
+    extraPeopleText.innerText =
+    extraPeople;
+
+    updateTotal();
+
+});
+
+document.querySelector(".minus-person")
+.addEventListener("click", () => {
+
+    if(extraPeople > 0){
+
+        extraPeople--;
+
+        extraPeopleText.innerText =
+        extraPeople;
+
+        updateTotal();
+
+    }
+
+});
+
+/* EXTRA PRINT */
+
+document.querySelector(".plus-print")
+.addEventListener("click", () => {
+
+    extraPrint++;
+
+    extraPrintText.innerText =
+    extraPrint;
+
+    updateTotal();
+
+});
+
+document.querySelector(".minus-print")
+.addEventListener("click", () => {
+
+    if(extraPrint > 0){
+
+        extraPrint--;
+
+        extraPrintText.innerText =
+        extraPrint;
+
+        updateTotal();
+
+    }
+
+});
+
+/* TOTAL */
+
+function updateTotal(){
+
+    const totalPeople =
+    basePeople + extraPeople;
+
+    summaryPeople.innerText =
+    totalPeople + " Orang";
+
+    let totalPrint = extraPrint;
+
+const activeOutput =
+document.querySelector(".output-btn.active");
+
+if(
+    activeOutput &&
+    activeOutput.innerText.includes("Print")
+){
+    totalPrint += 2;
+}
+
+summaryPrint.innerText =
+totalPrint + " Print";
+
+    const total =
+    basePrice +
+    outputPrice +
+    (extraPeople * 15000) +
+    (extraPrint * 15000);
+
+    summaryPrice.innerText =
+    "Rp " + total.toLocaleString("id-ID");
+
+}
+</script>
+
+</body>
+</html>
