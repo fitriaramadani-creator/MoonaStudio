@@ -9,7 +9,7 @@
 
     <div class="booking-wrapper">
         <div class="booking-sidebar">
-            <div class="studio-logo"><img src="logo moona.jpeg" width="50" alt="logo"></div>
+            <div class="studio-logo"><img src="logo moona.png" width="50" alt="logo"></div>
             <h1>Moona Studio - Bogor</h1>
             <div class="schedule-card">
                 <p>
@@ -169,7 +169,7 @@
     </div>
 
     <script>
-        // Fungsi update jam di sidebar
+        
         function updateSidebarTime() {
             const timePicker = document.getElementById('timePicker');
             const displayTime = document.getElementById('display-time');
@@ -193,14 +193,13 @@
         selectedDate.toLocaleDateString('id-ID', options);
         }
 
-        // Fungsi kirim form
         const bookingForm = document.getElementById('bookingForm');
         const formContainer = document.getElementById('form-container');
         const successMessage = document.getElementById('successMessage');
         bookingForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            formContainer.style.display = 'none'; // Sembunyikan form
-            successMessage.style.display = 'block'; // Tampilkan pesan
+            formContainer.style.display = 'none'; 
+            successMessage.style.display = 'block'; 
         });
 
         document.getElementById("datePicker").min =
