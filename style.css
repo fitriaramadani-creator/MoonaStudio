@@ -779,6 +779,11 @@ footer p {
         padding: 80px 5%;
     }
 
+    .gallery-grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    } 
+
     .figma-card {
         padding: 30px 20px;
     }
